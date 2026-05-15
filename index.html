@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChildVision | Parent Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar glass-panel">
+            <div class="brand">
+                <div class="logo-icon glow-blue"><i class="fa-solid fa-child-reaching"></i></div>
+                <h2>ChildVision</h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home Snapshot</span>
+                </li>
+                <li class="nav-item" data-target="growth">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Growth Tracker</span>
+                </li>
+                <li class="nav-item" data-target="nutrition">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <span>Nutrition Report</span>
+                </li>
+                <li class="nav-item" data-target="behavior">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <span>Milestone Tracker</span>
+                </li>
+                <li class="nav-item" data-target="safety">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Safety Log</span>
+                </li>
+            </ul>
+
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/150?img=47" alt="Parent Profile" class="avatar">
+                <div class="user-info">
+                    <span class="name">Sarah Connor</span>
+                    <span class="role">Parent Portal</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="child-selector glass-panel">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Leo" class="child-avatar">
+                    <div class="child-info">
+                        <span class="child-name">Leo</span>
+                        <span class="child-age">24 Months</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn secondary-btn" onclick="alert('Exporting PDF Report to pediatrician...')">
+                        <i class="fa-solid fa-file-pdf"></i> Export Clinical Report
+                    </button>
+                    <button class="icon-btn glass-panel notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge pulse">1</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-container">
+                
+                <!-- SECTION 1: HOME SNAPSHOT -->
+                <section id="dashboard" class="page-section active fade-in">
+                    <div class="section-header">
+                        <div>
+                            <h1 class="gradient-text">Daily Snapshot</h1>
+                            <p class="subtitle">A quick glance at Leo's holistic development today.</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-bento">
+                        <!-- Overall Wellness Score -->
+                        <div class="bento-card glass-panel wellness-card">
+                            <div class="wellness-score-wrapper">
+                                <svg viewBox="0 0 36 36" class="circular-chart emerald">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="82, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                </svg>
+                                <div class="score-text">
+                                    <span class="score-value">82</span>
+                                    <span class="score-label">/100</span>
+                                </div>
+                            </div>
+                            <div class="wellness-info">
+                                <h3>Overall Wellness Score</h3>
+                                <p class="status-message success"><i class="fa-solid fa-check-circle"></i> Your child is developing well</p>
+                            </div>
+                        </div>
+
+                        <!-- Today's Activity Summary -->
+                        <div class="bento-card glass-panel span-2">
+                            <div class="card-header">
+                                <h3>Today's Activity Summary</h3>
+                            </div>
+                            <div class="activity-summary-grid">
+                                <div class="activity-card success">
+                                    <i class="fa-solid fa-person-walking"></i>
+                                    <div class="act-details">
+                                        <h4>Walked 12 minutes today</h4>
+                                        <p>Gait normal ✅</p>
+                                    </div>
+                                </div>
+                                <div class="activity-card warning">
+                                    <i class="fa-solid fa-tablet-screen-button"></i>
+                                    <div class="act-details">
+                                        <h4>Screen time: 48 min</h4>
+                                        <p>Approaching daily limit ⚠️</p>
+                                    </div>
+                                </div>
+                                <div class="activity-card danger">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <div class="act-details">
+                                        <h4>2 danger zone approaches</h4>
+                                        <p>Kitchen door flagged 🔴</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: GROWTH TRACKER -->
+                <section id="growth" class="page-section hidden">
+                    <div class="section-header">
+                        <div>
+                            <h1 class="gradient-text">Physical Growth Tracker</h1>
+                            <p class="subtitle">Longitudinal tracking of measurements & WHO Z-scores.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-banner warning mb-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <strong>Velocity Alert:</strong> Height gain has slowed over the last 6 weeks — consider consulting your pediatrician.
+                        </div>
+                    </div>
+
+                    <div class="module-grid">
+                        <div class="bento-card glass-panel">
+                            <h3>Monthly Progress</h3>
+                            <div class="measurements-list mt-1">
+                                <div class="measure-item">
+                                    <span class="measure-label">Age</span>
+                                    <span class="measure-val">24 Months</span>
+                                </div>
+                                <div class="measure-item">
+                                    <span class="measure-label">Height</span>
+                                    <span class="measure-val">81.2 cm <span class="tag success">50th %ile</span></span>
+                                </div>
+                                <div class="measure-item">
+                                    <span class="measure-label">Weight</span>
+                                    <span class="measure-val">10.8 kg <span class="tag success">45th %ile</span></span>
+                                </div>
+                                <div class="measure-item">
+                                    <span class="measure-label">Head Circ.</span>
+                                    <span class="measure-val">47.1 cm <span class="tag success">Normal</span></span>
+                                </div>
+                                <div class="measure-item">
+                                    <span class="measure-label">MUAC</span>
+                                    <span class="measure-val">13.2 cm <span class="tag success">Green Zone</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bento-card glass-panel span-2">
+                            <div class="card-header">
+                                <h3>WHO Growth Trajectory (Height-for-Age)</h3>
+                            </div>
+                            <div class="chart-area large-chart">
+                                <svg viewBox="0 0 100 50" class="chart-svg full-width">
+                                    <!-- WHO Percentile Bands -->
+                                    <path d="M0,45 Q25,35 50,25 T100,5" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="15"/>
+                                    <path d="M0,45 Q25,35 50,25 T100,5" fill="none" stroke="rgba(16, 185, 129, 0.2)" stroke-width="8"/>
+                                    
+                                    <text x="90" y="4" fill="rgba(255,255,255,0.4)" font-size="2">97th</text>
+                                    <text x="90" y="10" fill="rgba(255,255,255,0.4)" font-size="2">50th</text>
+                                    
+                                    <!-- Child Trajectory -->
+                                    <path d="M0,48 Q20,38 40,30 T70,22" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" class="chart-path"/>
+                                    
+                                    <!-- Data Points -->
+                                    <circle cx="20" cy="38" r="1" fill="#fff"/>
+                                    <circle cx="40" cy="30" r="1" fill="#fff"/>
+                                    <circle cx="70" cy="22" r="2" fill="var(--accent-blue)" class="pulse-point"/>
+                                </svg>
+                                <div class="chart-x-axis">
+                                    <span>12m</span><span>15m</span><span>18m</span><span>21m</span><span>24m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: NUTRITION REPORT -->
+                <section id="nutrition" class="page-section hidden">
+                    <div class="section-header">
+                        <div>
+                            <h1 class="gradient-text">Nutrition & Health Report</h1>
+                            <p class="subtitle">Visual deficiency screening and dietary tracking.</p>
+                        </div>
+                    </div>
+
+                    <div class="alert-banner info mb-2">
+                        <i class="fa-solid fa-utensils"></i>
+                        <div>
+                            <strong>Nutrient Gap Alert:</strong> Iron intake has been below recommended levels for 5 days. Consider iron-rich foods like lentils, spinach, or fortified cereals.
+                        </div>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="bento-card glass-panel">
+                            <h3>Weekly Nutrition Risk</h3>
+                            <div class="risk-list mt-1">
+                                <div class="risk-item">
+                                    <span>Pallor Score</span>
+                                    <span class="tag success">Low Risk</span>
+                                </div>
+                                <div class="risk-item">
+                                    <span>Oedema Signs</span>
+                                    <span class="tag success">None detected</span>
+                                </div>
+                                <div class="risk-item">
+                                    <span>MUAC</span>
+                                    <span class="tag success">13.2cm (Green)</span>
+                                </div>
+                                <div class="risk-item">
+                                    <span>Nutrition Class</span>
+                                    <span class="tag success">Normal</span>
+                                </div>
+                            </div>
+                            
+                            <h3 class="mt-2">Pallor Trend</h3>
+                            <div class="trend-chart-mini">
+                                <!-- Sparkline mock -->
+                                <svg viewBox="0 0 100 20" class="sparkline">
+                                    <path d="M0,10 L20,12 L40,8 L60,11 L80,5 L100,6" fill="none" stroke="var(--accent-emerald)" stroke-width="2"/>
+                                </svg>
+                                <span class="text-sm text-gray">Month-over-month trend (Improving)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bento-card glass-panel span-2 flex-center">
+                            <div class="diversity-wheel-container">
+                                <h3>Dietary Diversity Wheel</h3>
+                                <p class="text-sm text-gray mb-1">Target: ≥ 5 out of 8 food groups daily</p>
+                                <div class="wheel-mockup">
+                                    <!-- Simple CSS/SVG mock for an 8-slice pie chart -->
+                                    <svg viewBox="0 0 36 36" class="wheel-svg">
+                                        <!-- Background slices -->
+                                        <circle cx="18" cy="18" r="15.9" fill="transparent" stroke="rgba(255,255,255,0.05)" stroke-width="5" stroke-dasharray="12.5 100"/>
+                                        
+                                        <!-- Active Slices representing groups eaten -->
+                                        <circle cx="18" cy="18" r="15.9" fill="transparent" stroke="var(--accent-emerald)" stroke-width="6" stroke-dasharray="12.5 100" transform="rotate(0 18 18)"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="transparent" stroke="var(--accent-blue)" stroke-width="6" stroke-dasharray="12.5 100" transform="rotate(45 18 18)"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="transparent" stroke="var(--accent-purple)" stroke-width="6" stroke-dasharray="12.5 100" transform="rotate(90 18 18)"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="transparent" stroke="var(--accent-yellow)" stroke-width="6" stroke-dasharray="12.5 100" transform="rotate(135 18 18)"/>
+                                        <circle cx="18" cy="18" r="15.9" fill="transparent" stroke="var(--accent-rose)" stroke-width="6" stroke-dasharray="12.5 100" transform="rotate(180 18 18)"/>
+                                    </svg>
+                                    <div class="wheel-center-text">
+                                        <span class="large">5</span>
+                                        <span>Groups</span>
+                                    </div>
+                                </div>
+                                <div class="wheel-legend">
+                                    <span><i class="fa-solid fa-circle emerald-text"></i> Grains</span>
+                                    <span><i class="fa-solid fa-circle blue-text"></i> Dairy</span>
+                                    <span><i class="fa-solid fa-circle purple-text"></i> Fruits</span>
+                                    <span><i class="fa-solid fa-circle yellow-text"></i> Veggies</span>
+                                    <span><i class="fa-solid fa-circle rose-text"></i> Meat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: MILESTONE TRACKER -->
+                <section id="behavior" class="page-section hidden">
+                    <div class="section-header">
+                        <div>
+                            <h1 class="gradient-text">Milestone & Behavior Tracker</h1>
+                            <p class="subtitle">Timeline of motor, social, and cognitive achievements.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel mb-2">
+                        <h3>Developmental Timeline</h3>
+                        <div class="horizontal-timeline">
+                            <div class="timeline-line"></div>
+                            
+                            <div class="timeline-node achieved" style="left: 10%;">
+                                <div class="node-dot"><i class="fa-solid fa-check"></i></div>
+                                <div class="node-content">
+                                    <h4>Sits without support</h4>
+                                    <span>Month 7</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-node achieved" style="left: 30%;">
+                                <div class="node-dot"><i class="fa-solid fa-check"></i></div>
+                                <div class="node-content">
+                                    <h4>Crawls</h4>
+                                    <span>Month 9</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-node achieved" style="left: 50%;">
+                                <div class="node-dot"><i class="fa-solid fa-check"></i></div>
+                                <div class="node-content">
+                                    <h4>Walks alone</h4>
+                                    <span>Month 13</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-node warning" style="left: 70%;">
+                                <div class="node-dot"><i class="fa-solid fa-exclamation"></i></div>
+                                <div class="node-content">
+                                    <h4>2-word phrases</h4>
+                                    <span>Expected: 18m</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-node future" style="left: 90%;">
+                                <div class="node-dot"></div>
+                                <div class="node-content">
+                                    <h4>Runs steadily</h4>
+                                    <span>Future (22m)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="module-grid">
+                        <div class="bento-card glass-panel">
+                            <h3>Behavioral Weekly Snapshot</h3>
+                            <ul class="snapshot-list mt-1">
+                                <li>
+                                    <span>Social gaze</span>
+                                    <span class="val">68% of session <i class="fa-solid fa-check-circle success-text"></i></span>
+                                </li>
+                                <li>
+                                    <span>Name response</span>
+                                    <span class="val">3/3 trials <i class="fa-solid fa-check-circle success-text"></i></span>
+                                </li>
+                                <li>
+                                    <span>Play type</span>
+                                    <span class="val">Functional <i class="fa-solid fa-check-circle success-text"></i></span>
+                                </li>
+                                <li>
+                                    <span>Screen facing time</span>
+                                    <span class="val">48 min <i class="fa-solid fa-triangle-exclamation warning-text"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bento-card glass-panel span-2">
+                            <h3>Emotion Trend Chart</h3>
+                            <p class="text-sm text-gray mb-1">Percentage of time in emotion states over past 8 weeks</p>
+                            <div class="emotion-bars">
+                                <div class="emotion-bar-row">
+                                    <span class="emotion-label">Happy (45%)</span>
+                                    <div class="bar-bg"><div class="bar-fill emerald" style="width: 45%"></div></div>
+                                </div>
+                                <div class="emotion-bar-row">
+                                    <span class="emotion-label">Neutral (38%)</span>
+                                    <div class="bar-bg"><div class="bar-fill blue" style="width: 38%"></div></div>
+                                </div>
+                                <div class="emotion-bar-row">
+                                    <span class="emotion-label">Frustrated (17%)</span>
+                                    <div class="bar-bg"><div class="bar-fill rose" style="width: 17%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 5: SAFETY LOG -->
+                <section id="safety" class="page-section hidden">
+                    <div class="section-header">
+                        <div>
+                            <h1 class="gradient-text">Safety Log & Alerts</h1>
+                            <p class="subtitle">AI boundary detection, object interaction, and incident history.</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-bento mb-2">
+                        <div class="bento-card glass-panel">
+                            <h3>Today's Safety Summary</h3>
+                            <ul class="snapshot-list mt-1">
+                                <li><span>Danger zone approaches</span> <span class="val warning-text">2 (Kitchen)</span></li>
+                                <li><span>Falls detected</span> <span class="val success-text">0</span></li>
+                                <li><span>Sleep position alerts</span> <span class="val success-text">0</span></li>
+                                <li><span>Screen time today</span> <span class="val warning-text">48 min</span></li>
+                            </ul>
+                            
+                            <h3 class="mt-2">Object Interaction Summary</h3>
+                            <ul class="snapshot-list mt-1 text-sm">
+                                <li><span>Books/reading</span> <span class="val">34 min</span></li>
+                                <li><span>Building blocks</span> <span class="val">22 min</span></li>
+                                <li><span>General toys</span> <span class="val">1h 12m</span></li>
+                                <li><span>Idle (no object)</span> <span class="val">18 min</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="bento-card glass-panel span-2 relative-img-container">
+                            <div class="card-header">
+                                <h3>Zone Activity Heatmap</h3>
+                                <span class="live-indicator"><span class="dot"></span> Live Map</span>
+                            </div>
+                            <div class="camera-feed-mock heatmap-bg">
+                                <img src="assets/heatmap.png" alt="Floorplan Heatmap" class="mock-image rounded" onerror="this.src='https://placehold.co/800x400/111827/4F46E5?text=Floorplan+Heatmap'">
+                                <div class="overlay-grad"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-card glass-panel">
+                        <h3>Alert History Log (Past 30 Days)</h3>
+                        <div class="alert-history mt-1">
+                            <div class="history-item">
+                                <img src="assets/safety.png" alt="Snapshot" class="alert-thumb" onerror="this.style.display='none'">
+                                <div class="history-content">
+                                    <h4><i class="fa-solid fa-triangle-exclamation warning-text"></i> Kitchen Danger Zone Approached</h4>
+                                    <p>Child was within 1 meter of the kitchen boundary polygon.</p>
+                                </div>
+                                <span class="history-time">Today, 10:42 AM</span>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-content">
+                                    <h4><i class="fa-solid fa-tv warning-text"></i> Screen Time Limit Warning</h4>
+                                    <p>Child faced active screen for 45+ minutes continuously.</p>
+                                </div>
+                                <span class="history-time">Today, 2:15 PM</span>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-content">
+                                    <h4><i class="fa-solid fa-person-falling rose-text"></i> Mild Fall Detected</h4>
+                                    <p>Sudden torso angle change detected during play. Normal recovery observed.</p>
+                                </div>
+                                <span class="history-time">Yesterday, 4:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
